@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Voucher Wolio.Net</title>
 
 <style>
@@ -10,70 +9,107 @@
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:radial-gradient(circle at top,#1b0050,#060a1f);
+background: radial-gradient(circle at center,#1a0066,#05081c);
 color:white;
 text-align:center;
 display:flex;
 align-items:center;
 justify-content:center;
 min-height:100vh;
+overflow:hidden;
+}
+
+/* efek background bintang */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background-image:radial-gradient(white 1px, transparent 1px);
+background-size:40px 40px;
+opacity:0.15;
+animation:movebg 60s linear infinite;
+}
+
+@keyframes movebg{
+0%{transform:translateY(0)}
+100%{transform:translateY(-2000px)}
 }
 
 .container{
-width:100%;
-max-width:520px;
-padding:30px;
+width:420px;
+max-width:95%;
 }
+
+/* LOGO */
 
 .logo img{
-width:330px;
+width:320px;
 max-width:95%;
-margin-bottom:35px;
-filter: drop-shadow(0px 0px 25px #00c3ff);
+margin-bottom:30px;
+animation:glow 3s infinite alternate;
 }
 
-.title{
-font-size:22px;
-margin-bottom:25px;
-color:#d7e5ff;
+@keyframes glow{
+0%{
+filter:drop-shadow(0 0 10px #00c3ff);
+transform:scale(1);
 }
+100%{
+filter:drop-shadow(0 0 35px #00e1ff);
+transform:scale(1.05);
+}
+}
+
+h2{
+margin-bottom:25px;
+font-weight:500;
+color:#cfe3ff;
+letter-spacing:1px;
+}
+
+/* VOUCHER */
 
 .voucher{
 background:linear-gradient(90deg,#2b4cff,#6c3bff);
 padding:18px;
 margin:15px 0;
-border-radius:14px;
+border-radius:16px;
 font-size:20px;
 letter-spacing:1px;
-box-shadow:0px 0px 15px rgba(0,150,255,0.5);
+box-shadow:0 0 15px rgba(0,150,255,0.5);
 transition:0.3s;
+cursor:pointer;
 }
 
 .voucher:hover{
-transform:scale(1.05);
-box-shadow:0px 0px 25px rgba(0,200,255,0.8);
+transform:scale(1.07);
+box-shadow:0 0 35px rgba(0,200,255,0.9);
 }
+
+/* BUTTON */
 
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:16px 40px;
-background:#25D366;
-color:white;
-text-decoration:none;
-border-radius:14px;
-font-size:18px;
+margin-top:25px;
+padding:15px 28px;
+background:linear-gradient(90deg,#00c853,#00ff9d);
+color:black;
 font-weight:bold;
-box-shadow:0px 0px 20px rgba(37,211,102,0.6);
+border-radius:12px;
+text-decoration:none;
+font-size:18px;
+box-shadow:0 0 15px rgba(0,255,150,0.6);
+transition:0.3s;
 }
 
 .btn:hover{
-background:#1ebe5b;
-transform:scale(1.05);
+transform:scale(1.08);
+box-shadow:0 0 30px rgba(0,255,150,1);
 }
 
 </style>
-
 </head>
 
 <body>
@@ -84,9 +120,7 @@ transform:scale(1.05);
 <img src="logo.png">
 </div>
 
-<div class="title">
-Pilihan Voucher
-</div>
+<h2>Pilihan Voucher</h2>
 
 <div class="voucher">
 ⚡ 6 JAM — Rp 3.000
@@ -101,7 +135,7 @@ Pilihan Voucher
 </div>
 
 <a class="btn"
-href="https://wa.me/6282343698983?text=Saya%20ingin%20membeli%20Voucher%20Wolio.Net">
+href="https://wa.me/6282343698983?text=Saya ingin membeli voucher Wolio.Net">
 Pesan via WhatsApp
 </a>
 
